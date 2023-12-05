@@ -33,6 +33,10 @@ body {
   font-family: "Overpass";
 }
 .text {
+  line-height: 1.6;
+}
+.text p:not(:last-child) {
+  margin: 0 0 30px 0;
 }
 .button {
   display: inline-block;
@@ -98,13 +102,11 @@ body {
 }
 /* --------------------------------------- */
 .main {
-  flex: 1 0 100%;
-  display: flex;
   background-color: #6257fe;
 }
 .main__container {
   display: flex;
-  flex: 1 1 auto;
+  min-height: 100vh;
 }
 
 .main__body {
@@ -177,5 +179,227 @@ body {
   }
   .main__body {
     padding: 100px 20px 30px 0;
+  }
+}
+/* ----------------------------------------------- */
+
+.about {
+  position: relative;
+  padding: 150px 0;
+}
+.about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #100c46;
+}
+.about__container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+}
+.about__body {
+  align-self: center;
+  flex: 0 1 50%;
+  padding: 0px 160px 0px 0;
+}
+.about__header {
+  color: #6257fe;
+}
+.about__header:not(:last-child) {
+  margin: 0 0 15px 0;
+}
+.about__text {
+  color: rgb(255, 255, 255, 0.8);
+}
+
+.about__image {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 0 0 47.5% 0;
+  margin: 0 0 0 -113px;
+  background: lightgray 50% / cover no-repeat;
+  box-shadow: 0px 10px 50px 0px rgba(16, 12, 70, 0.2);
+}
+.about__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+  .about {
+    padding: 50px 0;
+  }
+}
+@media (max-width: 991.98px) {
+  .about {
+    background-color: #100c46;
+    padding: 50px 0;
+  }
+  .about::before {
+    display: none;
+  }
+  .about__container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .about__body {
+    padding: 0;
+    margin: 0 0 30px 0;
+  }
+  .about__image {
+    margin: 0 -15px;
+  }
+}
+/* ----------------------------------------------- */
+
+.services {
+  overflow: hidden;
+}
+
+.services__container {
+  display: flex;
+  align-items: center;
+}
+
+.services__body {
+  padding: 30px 40px 30px 0;
+  flex: 0 0 54.8%;
+}
+
+.services__header:not(:last-child) {
+  margin: 0 0 70px 0;
+}
+
+.services__items {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 65px;
+}
+
+.services__item {
+}
+
+.item-services {
+}
+
+.item-services__icon {
+  margin: 0 0 14px 0;
+}
+
+.item-services__title {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.45; /* 32/22 */
+  display: flex;
+  align-items: center;
+  margin: 0 0 22px 0;
+}
+.item-services__title::before {
+  content: "";
+  height: 1px;
+  flex: 1 1 auto;
+  background-color: #100c46;
+  margin: 0 10px 0 0;
+}
+.item-services__text {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6; /* 32/20 */
+  color: #100c46cc;
+}
+
+.services__media {
+  position: relative;
+  padding: 165px 0;
+}
+
+.services__media::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 64px;
+  width: 100vw;
+  transform: translate(0px, -50%);
+  height: 200vh;
+  background-color: #6257fe;
+}
+
+.services__image {
+  position: relative;
+  z-index: 2;
+  max-width: 427px;
+}
+.services__image img {
+  width: 100%;
+}
+
+.services__phone {
+  width: 342px;
+  z-index: 2;
+  position: absolute;
+  display: inline-block;
+  left: 290px;
+  bottom: -20px;
+}
+.services__phone img {
+  width: 100%;
+}
+
+@media (max-width: 1520px) {
+  .services__media {
+    position: relative;
+    padding: 100px 0;
+  }
+  .services__phone {
+    left: 320px;
+    width: 60%;
+    bottom: 0;
+  }
+}
+@media (max-width: 1260px) {
+  .services__phone {
+    left: 0;
+  }
+}
+@media (max-width: 1200px) {
+  .services__header:not(:last-child) {
+    margin: 0 0 40px 0;
+  }
+}
+@media (max-width: 991.98px) {
+  .services {
+    background-color: #6257fe;
+  }
+  .services__body {
+    flex: 1 1 auto;
+    background-color: #fff;
+    margin: 0 -15px;
+    padding: 40px 15px;
+  }
+  .services__container {
+    flex-direction: column;
+  }
+  .services__media {
+    padding: 40px 0 100px 0;
+  }
+  .services__media::before {
+    display: none;
+  }
+}
+@media (max-width: 650px) {
+  .services__items {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 30px;
   }
 }
